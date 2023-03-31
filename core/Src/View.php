@@ -6,7 +6,7 @@ use Exception;
 
 class View
 {
-    private string $view = ''; //объявление закрытого метода
+    private string $view = '';
     private array $data = [];
     private string $root = '';
     private string $layout = '/layouts/main.php';
