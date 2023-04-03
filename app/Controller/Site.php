@@ -47,4 +47,8 @@ class Site
         Auth::logout();
         app()->route->redirect('/hello');
     }
+    public function employees(Request $request): string
+    {
+        return new View('site.employees');
+    }
 }
