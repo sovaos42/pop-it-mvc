@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Model\Employees;
 use Model\User;
 use Model\Post;
 use Src\View;
@@ -47,8 +48,10 @@ class Site
         Auth::logout();
         app()->route->redirect('/hello');
     }
-    public function employees(Request $request): string
+    public function Employees(): string
     {
-        return new View('site.employees');
+        $employees= Employees::all();
+        return (new View())->render('site.employees', ['employees' => $employees]);
     }
+
 }

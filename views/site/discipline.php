@@ -17,5 +17,6 @@
 </div>
 <button>Ред.</button>
 <button>Уд.</button>
+<style>
 
-
+</style>

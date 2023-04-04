@@ -7,28 +7,63 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pop it MVC</title>
 </head>
-<body>
+<div class="container1">
 <header>
+    <div class="headercon">
     <nav>
-        <a href="<?= app()->route->getUrl('/hello') ?>">Главная</a>
+        <a class="home" href="<?= app()->route->getUrl('/hello') ?>">УМУ</a>
         <?php
         if (!app()->auth::check()):
             ?>
-            <a href="<?= app()->route->getUrl('/login') ?>">Вход</a>
-            <a href="<?= app()->route->getUrl('/signup') ?>">Регистрация</a>
+            <a class="nohome" href="<?= app()->route->getUrl('/login') ?>">Вход</a>
+            <a class="nohome" href="<?= app()->route->getUrl('/signup') ?>">Регистрация</a>
         <?php
         else:
             ?>
-            <a href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->name ?>)</a>
-            <a href="<?= app()->route->getUrl('/employees') ?>">Сотрудники </a>
+            <a class="nohome" href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->name ?>)</a>
+            <a class="nohome" href="<?= app()->route->getUrl('/employees') ?>">Сотрудники </a>
         <?php
         endif;
         ?>
     </nav>
+
+    </div>
 </header>
+</div>
 <main>
     <?= $content ?? '' ?>
 </main>
+<style>
 
+    .headercon{
+        width: 100%;
+        border-style: solid;
+        border-width: 5px;
+        border-color: white white #004B27 white;
+    }
+    .container1{
+        margin-left: auto;
+        margin-right: auto
+    }
+    .home{
+        font-size: 32px;
+    }
+    .nohome{
+        margin-top: 10px;
+    }
+    header{
+        height: 100px;
+
+    }
+    nav{
+        display: flex;
+        justify-content: center;
+    }
+    a{
+        padding: 20px;
+        text-decoration: none;
+        color: #004B27;
+    }
+</style>
 </body>
 </html>

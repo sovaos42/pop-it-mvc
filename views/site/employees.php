@@ -1,13 +1,20 @@
 <h2>Сотрудники</h2>
 <h3><?= $message ?? ''; ?></h3>
 
-<!-- <ol>
+ <ol>
     <?php
-    // foreach(){
-    //     echo '<li>'..'</li>';
-    // }
+     foreach($employees as $employee){
+         echo '<li>'.$employee->IDEmployees.'</li>';
+         echo '<li>'.$employee->name.'</li>';
+         echo '<li>'.$employee->surname.'</li>';
+         echo '<li>'.$employee->patronymic.'</li>';
+         echo '<li>'.$employee->IDJobTitle.'</li>';
+         echo '<li>'.$employee->IDDiscipline.'</li>';
+         echo '<li>'.$employee->IDSubdivision.'</li>';
+         echo '<li>'.$employee->IDJobTitle.'</li>';
+     }
     ?>
-</ol> -->
+</ol>
 
 <button>Добавить</button>
 
