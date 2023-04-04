@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Model\Subvision;
 use Model\Employees;
 use Model\User;
 use Model\Post;
@@ -52,6 +53,11 @@ class Site
     {
         $employees= Employees::all();
         return (new View())->render('site.employees', ['employees' => $employees]);
+    }
+    public function Subvision(): string
+    {
+        $subvision= Subvision::all();
+        return (new View())->render('site.subvision', ['subvision' => $subvision]);
     }
 
 }

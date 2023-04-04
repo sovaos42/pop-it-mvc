@@ -20,11 +20,30 @@
         <?php
         else:
             ?>
+            <?php
+            if (app()->auth::IDRole() == 1):
+            ?>
+
             <a class="nohome" href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->name ?>)</a>
-            <a class="nohome" href="<?= app()->route->getUrl('/employees') ?>">Сотрудники </a>
+            <a class="nohome" href="<?= app()->route->getUrl('/employees') ?>">Сотрудники</a>
+            <a class="nohome" href="<?= app()->route->getUrl('/subvision') ?>">Подразделение</a>
+            <a class="nohome" href="<?= app()->route->getUrl('/discipline') ?>">Дисциплина</a>
+            <a class="nohome" href="<?= app()->route->getUrl('/jobTitle') ?>">Вид подразделенич </a>
+            <?php
+        endif;
+        ?>
+            <?php
+            if (app()->auth::IDRole() == 2):
+            ?>
+
+            <a class="nohome" href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->name ?>)</a>
         <?php
         endif;
         ?>
+         <?php
+        endif;
+        ?>
+      
     </nav>
 
     </div>
