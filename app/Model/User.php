@@ -13,7 +13,15 @@ class User extends Model implements IdentityInterface
     public $timestamps = false;
     protected $fillable = [
         'IDRole',
+        'surname',
         'name',
+        'patronymic',
+        'IDSex',
+        'date',
+        'address',
+        'IDJobTitle',
+        'IDSubvision',
+        'IDDisciplines',
         'login',
         'password'
     ];
@@ -43,5 +51,6 @@ class User extends Model implements IdentityInterface
         return self::where(['login' => $credentials['login'],
             'password' => md5($credentials['password'])])->first();
     }
-
+    
+    
 }

@@ -18,18 +18,20 @@
             </tr>
 
                 <?php
-                foreach($Employees as $empl){
-                    echo '<tr>';
-                    echo '<td class="tabl">'.$empl->IDEmployees.'</td>';
-                    echo '<td class="tabl">'.$empl->surname.'</td>';
-                    echo '<td class="tabl">'.$empl->name.'</td>';
-                    echo '<td class="tabl">'.$empl->patronymic.'</td>';
-                    echo '<td class="tabl">'.$empl->IDDiscipline.'</td>';
-                    echo '<td class="tabl">'.$empl->IDSubdivision.'</td>';
-                    echo '<td class="tabl">'.$empl->IDJobTitle.'</td>';
-                    echo '<td>'.'<button>Ред.</button>'.'</td>';
-                    echo '<td>'.'<button>Уд.</button>'.'</td>';
-                    '</tr>';
+                foreach($User as $empl){
+                    if($empl->IDRole == 2){
+                        echo '<tr>';
+                        echo '<td class="tabl">'.$empl->id.'</td>';
+                        echo '<td class="tabl">'.$empl->surname.'</td>';
+                        echo '<td class="tabl">'.$empl->name.'</td>';
+                        echo '<td class="tabl">'.$empl->patronymic.'</td>';
+                        echo '<td class="tabl">'.$empl->IDDisciplines.'</td>';
+                        echo '<td class="tabl">'.$empl->IDSubvision.'</td>';
+                        echo '<td class="tabl">'.$empl->IDJobTitle.'</td>';
+                        echo '<td>'.'<button>Ред.</button>'.'</td>';
+                        echo '<td>'.'<button>Уд.</button>'.'</td>';
+                        '</tr>';
+                    }
                 }
                 ?>
         </table>

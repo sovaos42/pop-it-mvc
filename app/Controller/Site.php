@@ -7,7 +7,7 @@ use Model\ViewSubvision;
 use Model\Discipline;
 use Model\JobTitle;
 use Model\Subvision;
-use Model\Employees;
+
 use Model\User;
 use Model\Post;
 use Src\View;
@@ -54,11 +54,11 @@ class Site
         app()->route->redirect('/hello');
     }
     //сотрудник
-    public function Employees(): string
-    {
-        $Employees= Employees::all();
-        return (new View())->render('site.employees', ['Employees' => $Employees]);
-    }
+    // public function Employees(): string
+    // {
+    //     $Employees= Employees::all();
+    //     return (new View())->render('site.employees', ['Employees' => $Employees]);
+    // }
     //подразделение
     public function Subvision(): string
     {
@@ -84,9 +84,9 @@ class Site
         return (new View())->render('site.viewSubvision', ['ViewSubvision' => $ViewSubvision]);
     }
     //личный кабинет
-    // public function EmployeesHome(): string
-    // {
-    //     $EmployeesHome= EmployeesHome::all();
-    //     return (new View())->render('site.employeesHome', ['Employees' => $Employees]);
-    // }
+    public function User(): string
+    {
+        $User= User::all();
+        return (new View())->render('site.users', ['User' => $User]);
+    }
 }

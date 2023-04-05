@@ -16,6 +16,7 @@
         if (!app()->auth::check()):
             ?>
             <a class="nohome" href="<?= app()->route->getUrl('/login') ?>">Вход</a>
+            <a class="nohome" href="<?= app()->route->getUrl('/signup') ?>">Регистрация</a>
         <?php
         else:
             ?>
@@ -24,7 +25,7 @@
             ?>
             <a class="nohome" href="<?= app()->route->getUrl('/signup') ?>">Регистрация</a>
             <a class="nohome" href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->name ?>)</a>
-            <a class="nohome" href="<?= app()->route->getUrl('/employees') ?>">Сотрудники</a>
+            <a class="nohome" href="<?= app()->route->getUrl('/users') ?>">Сотрудники</a>
             <a class="nohome" href="<?= app()->route->getUrl('/subvision') ?>">Подразделение</a>
             <a class="nohome" href="<?= app()->route->getUrl('/viewSubvision') ?>"> Вид подразделение</a>
             <a class="nohome" href="<?= app()->route->getUrl('/discipline') ?>">Дисциплина</a>
@@ -38,7 +39,6 @@
             ?>
 
             <a class="nohome" href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->name ?>)</a>
-            <a class="nohome" href="<?= app()->route->getUrl('/employees') ?>">Сотрудники</a>
             <a class="nohome" href="<?= app()->route->getUrl('/subvision') ?>">Подразделение</a>
             <a class="nohome" href="<?= app()->route->getUrl('/discipline') ?>">Дисциплина</a>
             <a class="nohome" href="<?= app()->route->getUrl('/jobTitle') ?>">Должность </a>
