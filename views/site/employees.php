@@ -1,33 +1,36 @@
 <h2>Сотрудники</h2>
 <h3><?= $message ?? ''; ?></h3>
 
- <ol>
-    <?php
-     foreach($employees as $employee){
-         echo '<li>'.$employee->IDEmployees.'</li>';
-         echo '<li>'.$employee->name.'</li>';
-         echo '<li>'.$employee->surname.'</li>';
-         echo '<li>'.$employee->patronymic.'</li>';
-         echo '<li>'.$employee->IDJobTitle.'</li>';
-         echo '<li>'.$employee->IDDiscipline.'</li>';
-         echo '<li>'.$employee->IDSubdivision.'</li>';
-         echo '<li>'.$employee->IDJobTitle.'</li>';
-     }
-    ?>
-</ol>
+
 
 <button>Добавить</button>
+<table>
+    <tr>
+        <td >ID сотрудника</td>
+        <td>Фамилия</td>
+        <td>Имя</td>
+        <td>Отчество</td>
+        <td>ID дисциплины</td>
+        <td>ID подразделение</td>
+        <td>ID должность</td>
+    </tr>
 
-<div>
-    <p>ID сотрудника</p>
-    <p>Фамилия</p>
-    <p>Имя</p>
-    <p>Отчество</p>
-    <p>ID дисциплины</p>
-    <p>ID подразделение</p>
-    <p>ID должность</p>
-</div>
-<button>Ред.</button>
-<button>Уд.</button>
+        <?php
+        foreach($Employees as $empl){
+            echo '<tr>';
+            echo '<td>'.$empl->IDEmployees.'</td>';
+            echo '<td>'.$empl->surname.'</td>';
+            echo '<td>'.$empl->name.'</td>';
+            echo '<td>'.$empl->patronymic.'</td>';
+            echo '<td>'.$empl->IDDiscipline.'</td>';
+            echo '<td>'.$empl->IDSubvision.'</td>';
+            echo '<td>'.$empl->IDJobTitle.'</td>';
+            echo '<td>'.'<button>Ред.</button>'.'</td>';
+            echo '<td>'.'<button>Уд.</button>'.'</td>';
+            '</tr>';
+        }
+        ?>
+</table>
+
 
 

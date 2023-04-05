@@ -5,8 +5,8 @@ namespace Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subvision extends Model
+class Discipline extends Model
 {
     use HasFactory;
     public $timestamps = false;
-} 
+}

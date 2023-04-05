@@ -11,12 +11,22 @@
 
 <button>Добавить</button>
 
-<div>
-    <p>ID подразделения</p>
-    <p>ID вид подразделения</p>
-    <p>Название</p>
-</div>
-<button>Ред.</button>
-<button>Уд.</button>
+<table>
+    <tr>
+        <td >ID подразделения</td>
+        <td>ID вида подразделения</td>
+        <td>Название</td>
+    </tr>
 
-
+        <?php
+        foreach($Subvision as $sub){
+            echo '<tr>';
+            echo '<td>'.$sub->IDSubvision.'</td>';
+            echo '<td>'.$sub->IDView.'</td>';
+            echo '<td>'.$sub->title.'</td>';
+            echo '<td>'.'<button>Ред.</button>'.'</td>';
+            echo '<td>'.'<button>Уд.</button>'.'</td>';
+            '</tr>';
+        }
+        ?>
+</table>

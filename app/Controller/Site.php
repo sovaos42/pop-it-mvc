@@ -2,6 +2,10 @@
 
 namespace Controller;
 
+use Model\EmployeesHome;
+use Model\ViewSubvision;
+use Model\Discipline;
+use Model\JobTitle;
 use Model\Subvision;
 use Model\Employees;
 use Model\User;
@@ -26,7 +30,7 @@ class Site
     public function signup(Request $request): string
     {
         if ($request->method==='POST' && User::create($request->all())){
-            app()->route->redirect('/go');
+            app()->route->redirect('/hello');
         }
         return new View('site.signup');
     }
@@ -49,15 +53,40 @@ class Site
         Auth::logout();
         app()->route->redirect('/hello');
     }
+    //сотрудник
     public function Employees(): string
     {
-        $employees= Employees::all();
-        return (new View())->render('site.employees', ['employees' => $employees]);
+        $Employees= Employees::all();
+        return (new View())->render('site.employees', ['Employees' => $Employees]);
     }
+    //подразделение
     public function Subvision(): string
     {
-        $subvision= Subvision::all();
-        return (new View())->render('site.subvision', ['subvision' => $subvision]);
+        $Subvision= Subvision::all();
+        return (new View())->render('site.subvision', ['Subvision' => $Subvision]);
     }
-
+    //должность
+    public function JobTitle(): string
+    {
+        $JobTitle= JobTitle::all();
+        return (new View())->render('site.jobTitle', ['JobTitle' => $JobTitle]);
+    }
+    //дисциплина
+    public function Discipline(): string
+    {
+        $Discipline= Discipline::all();
+        return (new View())->render('site.discipline', ['Discipline' => $Discipline]);
+    }
+    //вид подразделения
+    public function ViewSubvision(): string
+    {
+        $ViewSubvision= ViewSubvision::all();
+        return (new View())->render('site.viewSubvision', ['ViewSubvision' => $ViewSubvision]);
+    }
+    //личный кабинет
+    // public function EmployeesHome(): string
+    // {
+    //     $EmployeesHome= EmployeesHome::all();
+    //     return (new View())->render('site.employeesHome', ['Employees' => $Employees]);
+    // }
 }

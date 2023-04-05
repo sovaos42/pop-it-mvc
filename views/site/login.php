@@ -56,8 +56,6 @@
     .loginA{
         display: flex;
         flex-direction: column;
-
-
     }
 
     .passwordA{
