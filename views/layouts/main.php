@@ -20,7 +20,7 @@
         else:
             ?>
             <?php
-            if (app()->auth::IDRole() == 1):
+            if ($_SESSION ['IDRole'] === 1):
             ?>
             <a class="nohome" href="<?= app()->route->getUrl('/signup') ?>">Регистрация</a>
             <a class="nohome" href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->name ?>)</a>
@@ -33,7 +33,7 @@
         endif;
         ?>
             <?php
-            if (app()->auth::IDRole() == 2):
+            if ($_SESSION ['IDRole'] ===  2):
             ?>
             <a class="nohome" href="<?= app()->route->getUrl('/logout') ?>">Выход (<?= app()->auth::user()->name ?>)</a>
             <a class="nohome" href="<?= app()->route->getUrl('/users') ?>">Сотрудники</a>

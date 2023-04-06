@@ -23,6 +23,7 @@ class Auth
     {
         self::$user = $user;
         Session::set('id', self::$user->getId());
+        Session::set('IDRole', self::$user->IDRole);
     }
 
     //Аутентификация пользователя и вход по учетным данным

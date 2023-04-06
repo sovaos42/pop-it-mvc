@@ -4,8 +4,15 @@
         <h3><?= $message ?? ''; ?></h3>
         <form method="post">
             <lable class="ID">Роль
+                
                 <select name="IDRole" id="" >
+                    <?php
+                if ($_SESSION ['IDRole'] != 1):
+                ?>
                     <option value="1">Администратор</option>
+                    <?php
+                    endif;
+                    ?>
                     <option value="2">Сотрудник</option>
                 </select>
             </lable>
