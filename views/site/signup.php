@@ -3,39 +3,44 @@
         <h2>Регистрация нового пользователя</h2>
         <h3><?= $message ?? ''; ?></h3>
         <form method="post">
-            
-            <select name="IDRole" id="" >
-                <option value="1">Администратор</option>
-                <option value="2">Сотрудник</option>
-            </select>
-
+            <lable class="ID">Роль
+                <select name="IDRole" id="" >
+                    <option value="1">Администратор</option>
+                    <option value="2">Сотрудник</option>
+                </select>
+            </lable>
             <label class="ID">Фамилия<input type="text"  name="surname"></label>
             <label class="ID">Имя<input type="text"  name="name"></label>
             <label class="ID">Отчество<input type="text"  name="patronymic"></label>
-            <select name="IDSex" id="" >
-                <option value="1">Муж</option>
-                <option value="2">Жен</option>
-            </select>
+            <lable class="ID">Пол
+                <select name="IDSex" id="" >
+                    <option value="1">Муж</option>
+                    <option value="2">Жен</option>
+                </select>
+            </lable>
             <label class="ID">Дата рождения<input type="date"  name="date"></label>
             <label class="ID">Адрес<input type="text"  name="address"></label>
-            <select name="IDJobTitle" id="" >
-                <option value="3"></option>
-                <option value="1">Преподаватель</option>
-                <option value="2">Преподаватель в.к.</option>
-            </select>
-            <select name="IDSubvision" id="" >
-                <option value="3"></option>
-                <option value="1">Физ-мат</option>
-                <option value="2">Соц-гум</option>
-            </select>
-            <select name="IDDisciplines" id="" >
-                <option value="3"></option>
-                <option value="1">Математика</option>
-                <option value="2">Физика</option>
-            </select>
-            <!-- <label class="ID">Должность<input type="text"  name="IDJobTitle"></label>
-            <label class="ID">Подразделение<input type="text"  name="IDSubvision"></label>
-            <label class="ID">Дисциплина<input type="text"  name="IDDiscipline"></label> -->
+            <lable class="ID">Должность
+                <select name="IDJobTitle" id="" >
+                    <option value="3">Администратор</option>
+                    <option value="1">Преподаватель</option>
+                    <option value="2">Преподаватель в.к.</option>
+                </select>
+            </lable>
+            <lable class="ID">Подразделение
+                <select name="IDSubvision" id="" >
+                    <option value="3">Администратор</option>
+                    <option value="1">Физ-мат</option>
+                    <option value="2">Соц-гум</option>
+                </select>
+            </lable>
+            <lable class="ID">Дисциплина
+                <select name="IDDisciplines" id="" >
+                    <option value="3"> Администратор</option>
+                    <option value="1">Математика</option>
+                    <option value="2">Физика</option>
+                </select>
+            </lable>
             <label class="ID">Логин <input type="text" name="login"></label>
             <label class="ID">Пароль <input type="password" name="password"></label>
             <button class="button">Зарегистрироваться</button>
@@ -49,6 +54,7 @@
         height: 30px;
         width: 400px;
         margin: 10px;
+        background-color: #fff;
     }
     h2 {
         display: flex;
@@ -85,7 +91,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
     }
     .name{
         display: flex;

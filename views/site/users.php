@@ -19,7 +19,7 @@
 
                 <?php
                 foreach($User as $empl){
-                    if($empl->IDRole == 2){
+                    
                         echo '<tr>';
                         echo '<td class="tabl">'.$empl->id.'</td>';
                         echo '<td class="tabl">'.$empl->surname.'</td>';
@@ -31,7 +31,7 @@
                         echo '<td>'.'<button>Ред.</button>'.'</td>';
                         echo '<td>'.'<button>Уд.</button>'.'</td>';
                         '</tr>';
-                    }
+                    
                 }
                 ?>
         </table>

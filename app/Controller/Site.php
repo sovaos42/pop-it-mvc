@@ -3,11 +3,9 @@
 namespace Controller;
 
 use Model\EmployeesHome;
-use Model\ViewSubvision;
 use Model\Discipline;
 use Model\JobTitle;
 use Model\Subvision;
-
 use Model\User;
 use Model\Post;
 use Src\View;
@@ -24,16 +22,10 @@ class Site
 
     public function hello(): string
     {
-        return new View('site.hello', ['message' => 'hello working']);
+        return new View('site.hello', ['message' => 'Вы вошли!']);
     }
 
-    public function signup(Request $request): string
-    {
-        if ($request->method==='POST' && User::create($request->all())){
-            app()->route->redirect('/hello');
-        }
-        return new View('site.signup');
-    }
+    
     public function login(Request $request): string
     {
         //Если просто обращение к странице, то отобразить форму
@@ -53,12 +45,6 @@ class Site
         Auth::logout();
         app()->route->redirect('/hello');
     }
-    //сотрудник
-    // public function Employees(): string
-    // {
-    //     $Employees= Employees::all();
-    //     return (new View())->render('site.employees', ['Employees' => $Employees]);
-    // }
     //подразделение
     public function Subvision(): string
     {
@@ -77,13 +63,7 @@ class Site
         $Discipline= Discipline::all();
         return (new View())->render('site.discipline', ['Discipline' => $Discipline]);
     }
-    //вид подразделения
-    public function ViewSubvision(): string
-    {
-        $ViewSubvision= ViewSubvision::all();
-        return (new View())->render('site.viewSubvision', ['ViewSubvision' => $ViewSubvision]);
-    }
-    //личный кабинет
+    //сотрудники
     public function User(): string
     {
         $User= User::all();
