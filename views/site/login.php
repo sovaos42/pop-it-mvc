@@ -9,6 +9,8 @@
         ?>
 
         <form method="post">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+
             <label class="loginA">Логин <input type="text" name="login"></label>
             <label class="passwordA">Пароль <input type="password" name="password"></label>
             <button class="buttonA">Войти</button>
