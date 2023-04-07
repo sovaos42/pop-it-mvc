@@ -1,23 +1,27 @@
 <h2>Добавить подразделение</h2>
 <h3><?= $message ?? ''; ?></h3>
 
-<!-- <ol>
-    <?php
-    // foreach(){
-    //     echo '<li>'..'</li>';
-    // }
-    ?>
-</ol> -->
-
 <div class="container">
     <div class="body">
-    <label class="ID">ID подразделения<input type="text"  name="subdivision"></label>
-    <label class="ID">ID вид подразделения<input type="text"  name="viewSubdivision"></label>
-    <label class="title">Название <input type="text"  name="title"></label>
+        <form method="post">
+                <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+                <label class="ID">ID подразделения<input type="text"  name="subdivision"></label>
+                <label class="ID">ID вид подразделения
+                <select name="IDView">
+                    <?php foreach ($view as $vie){
+                    ?>
+                        <option value="<?= $vie->IDView ?>"><?= $vie->title ?></option>
 
-<button class="button">Добавить</button>
+                    <?php 
+                    }
+                    ?>
+                    </select>
+                </label>
+                <label class="title">Название <input type="text"  name="title"></label>
 
-</div>
+                <button class="button">Добавить</button>
+        </form>
+    </div>
 </div>
 <style>
     h2 {
@@ -65,7 +69,7 @@
         display: flex;
         flex-direction: column;
     }
-    .button{
+    .button, button{
         height: 40px;
         width: 150px;
         color: #004B27;

@@ -18,4 +18,8 @@ Route::add(['GET', 'POST'], '/discipline', [Controller\Site::class, 'discipline'
 Route::add(['GET', 'POST'], '/jobTitle', [Controller\Site::class, 'jobTitle'])
    ->middleware('auth');
 Route::add(['GET', 'POST'], '/viewSubvision', [Controller\Admin::class, 'viewSubvision'])
-   ->middleware('auth');
+   ->middleware('admin');
+Route::add(['GET', 'POST'], '/viewSubvisionAdd', [Controller\Admin::class, 'ViewSubvisionAdd'])
+   ->middleware('admin', 'auth');
+   Route::add(['GET', 'POST'], '/subvisionAdd', [Controller\Site::class, 'SubvisionAdd'])
+   ->middleware('admin');

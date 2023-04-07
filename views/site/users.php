@@ -5,7 +5,7 @@
 
 
 
-        <button class="dob">Добавить</button>
+        <a class="button" href="<?= app()->route->getUrl('/signup') ?>">Добавить</a>
         <table>
             <tr>
                 <td class="tabl">ID сотрудника</td>
@@ -59,8 +59,10 @@
         border: solid #004B27 2px;
         background-color: white;
     }
-    .dob{
-        margin-bottom: 30px;
+    .button{
+        font-size: 20pt;
+        text-shadow: 1px 1px 1px green;
+        color: white;
     }
 </style>
 

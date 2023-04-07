@@ -30,21 +30,36 @@
             <label class="ID">Дата рождения<input type="date"  name="date"></label>
             <label class="ID">Адрес<input type="text"  name="address"></label>
             <lable class="ID">Должность
-                <select name="IDJobTitle" id="" >
-                    <option value="1">Преподаватель</option>
-                    <option value="2">Преподаватель в.к.</option>
+                <select name="IDJobTitle">
+                <?php foreach ($jobTitle as $idjob){
+                    ?>
+                        <option value="<?= $idjob->IDJobTitle ?>"><?= $idjob->title ?></option>
+
+                    <?php 
+                    }
+                    ?>
                 </select>
             </lable>
             <lable class="ID">Подразделение
-                <select name="IDSubvision" id="" >
-                    <option value="1">Физ-мат</option>
-                    <option value="2">Соц-гум</option>
-                </select>
+            <select name="IDSubvision">
+                    <?php foreach ($subvision as $sub){
+                    ?>
+                        <option value="<?= $sub->IDSubvision ?>"><?= $sub->title ?></option>
+
+                    <?php 
+                    }
+                    ?>
+                    </select>
             </lable>
             <lable class="ID">Дисциплина
                 <select name="IDDisciplines" id="" >
-                    <option value="1">Математика</option>
-                    <option value="2">Физика</option>
+                <?php foreach ($discipline as $dis){
+                    ?>
+                        <option value="<?= $dis->IDDisciplines ?>"><?= $dis->title ?></option>
+
+                    <?php 
+                    }
+                    ?>
                 </select>
             </lable>
             <label class="ID">Логин <input type="text" name="login"></label>

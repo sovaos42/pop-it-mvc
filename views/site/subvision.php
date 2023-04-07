@@ -3,7 +3,7 @@
         <h2>Подразделение</h2>
         <h3><?= $message ?? ''; ?></h3>
 
-        <button class="dob">Добавить</button>
+        <a  href="<?= app()->route->getUrl('/subvisionAdd') ?>" class="button">Добавить</a>
 
         <table>
             <tr>

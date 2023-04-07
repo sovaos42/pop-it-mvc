@@ -6,6 +6,7 @@ use Model\EmployeesHome;
 use Model\Discipline;
 use Model\JobTitle;
 use Model\Subvision;
+use Model\ViewSubvision;
 use Model\User;
 use Model\Post;
 use Src\View;
@@ -51,6 +52,32 @@ class Site
         $Subvision= Subvision::all();
         return (new View())->render('site.subvision', ['Subvision' => $Subvision]);
     }
+
+    public function SubvisionAdd(Request $request): string
+    {
+        $view = Subvision::all();
+        $SubvisionAdd= Subvision::all();
+       if ($request->method === 'POST') {
+    
+           $validator = new Validator($request->all(), [
+               'title' => ['required'],
+           ], [
+               'required' => 'Поле :field пусто',
+               'unique' => 'Поле :field должно быть уникально'
+           ]);
+    
+           if($validator->fails()){
+               return new View('site.subvisionAdd',
+                   ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+           }
+    
+           if (Subvision::create($request->all())) {
+               app()->route->redirect('/subvision');
+           }
+       }
+       return (new View())->render('site.subvisionAdd', ['SubvisionAdd' => $SubvisionAdd, 'view'=>$view]);
+    }
+
     //должность
     public function JobTitle(): string
     {
@@ -69,4 +96,7 @@ class Site
         $User= User::all();
         return (new View())->render('site.users', ['User' => $User]);
     }
+    
+
+    
 }

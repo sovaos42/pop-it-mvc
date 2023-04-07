@@ -3,7 +3,7 @@
         <h2>Вид подразделения</h2>
         <h3><?= $message ?? ''; ?></h3>
 
-        <button class="dob">Добавить</button>
+        <a  href="<?= app()->route->getUrl('/viewSubvisionAdd') ?>" class="button">Добавить</a>
 
         <table>
             <tr>
@@ -24,6 +24,9 @@
         </table>
     </div>
 </div>
+
+
+<a href="delete_tub.php?=id<?php echo $row['IDView'];?>">
 <style>
     .body{
         background-color: rgba(204, 226, 221, 1);
@@ -46,7 +49,9 @@
         border: solid #004B27 2px;
         background-color: white;
     }
-    .dob{
-        margin-bottom: 30px;
+    .button{
+        font-size: 20pt;
+        text-shadow: 1px 1px 1px green;
+        color: white;
     }
 </style>

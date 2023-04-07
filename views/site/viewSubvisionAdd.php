@@ -11,12 +11,13 @@
 
 <div class="container">
     <div class="body">
-    <label class="ID">ID вид подразделения<input type="text"  name="viewSubdivision"></label>
-    <label class="title">Название <input type="text"  name="title"></label>
+        <form method="post">
+            <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+            <label class="title">Название <input type="text"  name="title"></label>
 
-<button class="button">Добавить</button>
-
-</div>
+        <button class="button">Добавить</button>
+        </form>
+    </div>
 </div>
 <style>
     h2 {
@@ -64,7 +65,7 @@
         display: flex;
         flex-direction: column;
     }
-    .button{
+    .button, button{
         height: 40px;
         width: 150px;
         color: #004B27;
