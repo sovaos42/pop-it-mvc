@@ -28,8 +28,6 @@
                         echo '<td class="tabl">'.$empl->IDDisciplines.'</td>';
                         echo '<td class="tabl">'.$empl->IDSubvision.'</td>';
                         echo '<td class="tabl">'.$empl->IDJobTitle.'</td>';
-                        echo '<td>'.'<button>Ред.</button>'.'</td>';
-                        echo '<td>'.'<button>Уд.</button>'.'</td>';
                         '</tr>';
                     
                 }

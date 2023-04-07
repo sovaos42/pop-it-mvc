@@ -17,8 +17,6 @@
                     echo '<tr>';
                     echo '<td class="tabl">'.$jobt->IDJobTitle.'</td>';
                     echo '<td class="tabl">'.$jobt->title.'</td>';
-                    echo '<td>'.'<button>Ред.</button>'.'</td>';
-                    echo '<td>'.'<button>Уд.</button>'.'</td>';
                     '</tr>';
                 }
                 ?>

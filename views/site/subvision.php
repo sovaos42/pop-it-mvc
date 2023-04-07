@@ -18,8 +18,6 @@
                     echo '<td class="tabl">'.$sub->IDSubvision.'</td>';
                     echo '<td class="tabl">'.$sub->IDView.'</td>';
                     echo '<td class="tabl">'.$sub->title.'</td>';
-                    echo '<td>'.'<button>Ред.</button>'.'</td>';
-                    echo '<td>'.'<button>Уд.</button>'.'</td>';
                     '</tr>';
                 }
                 ?>

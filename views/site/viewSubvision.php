@@ -16,8 +16,6 @@
                     echo '<tr>';
                     echo '<td class="tabl">'.$viewsub->IDView.'</td>';
                     echo '<td class="tabl">'.$viewsub->title.'</td>';
-                    echo '<td>'.'<button>Ред.</button>'.'</td>';
-                    echo '<td>'.'<button>Уд.</button>'.'</td>';
                     '</tr>';
                 }
                 ?>

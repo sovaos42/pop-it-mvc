@@ -13,12 +13,13 @@
 
     <?php
         foreach($Discipline as $disc){
-            echo '<tr>';
-            echo '<td class="tabl">'.$disc->IDDisciplines.'</td>';
-            echo '<td class="tabl">'.$disc->title.'</td>';
-            echo '<td>'.'<button>Ред.</button>'.'</td>';
-            echo '<td>'.'<button>Уд.</button>'.'</td>';
-            '</tr>';
+            ?>
+            <tr>
+            <td class="tabl"> <?= $disc->id?> </td>
+            <td class="tabl"> <?= $disc->title?> </td>
+            <td class="button"><a href="<?= app()->route->getUrl("/disciplineEdit?id=$disc->id") ?>" class="button">Редактировать</a></td>
+            </tr>
+            <?php
         }
         ?>
 </table>
