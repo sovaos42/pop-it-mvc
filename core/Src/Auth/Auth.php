@@ -62,4 +62,13 @@ class Auth
     public static function IDRole(){
         return self::$user->IDRole ?? 0;
     }
+
+    //Генерация нового токена для CSRF
+    public static function generateCSRF(): string
+    {
+    $token = md5(time());
+    Session::set('csrf_token', $token);
+    return $token;
+    }
+
 }

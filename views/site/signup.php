@@ -31,21 +31,18 @@
             <label class="ID">Адрес<input type="text"  name="address"></label>
             <lable class="ID">Должность
                 <select name="IDJobTitle" id="" >
-                    <option value="3">Администратор</option>
                     <option value="1">Преподаватель</option>
                     <option value="2">Преподаватель в.к.</option>
                 </select>
             </lable>
             <lable class="ID">Подразделение
                 <select name="IDSubvision" id="" >
-                    <option value="3">Администратор</option>
                     <option value="1">Физ-мат</option>
                     <option value="2">Соц-гум</option>
                 </select>
             </lable>
             <lable class="ID">Дисциплина
                 <select name="IDDisciplines" id="" >
-                    <option value="3"> Администратор</option>
                     <option value="1">Математика</option>
                     <option value="2">Физика</option>
                 </select>
