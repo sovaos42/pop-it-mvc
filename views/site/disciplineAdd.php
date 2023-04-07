@@ -1,20 +1,14 @@
 <h2>Добавить дисцилину</h2>
 <h3><?= $message ?? ''; ?></h3>
 
-<!-- <ol>
-    <?php
-    // foreach(){
-    //     echo '<li>'..'</li>';
-    // }
-    ?>
-</ol> -->
-
 <div class="container">
     <div class="body">
-
-    <label class="ID">ID дисциплины<input type="text"  name="discipline"></label>
+    <form method="post">
+                <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
     <label class="title">Название <input type="text"  name="title"></label>
     <button class="button">Добавить</button>
+    </select>
+    </form>
     </div>
 </div>
 <style>

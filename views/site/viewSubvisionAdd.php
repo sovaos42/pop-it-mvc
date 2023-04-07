@@ -1,14 +1,6 @@
 <h2>Добавить вид подразделения</h2>
 <h3><?= $message ?? ''; ?></h3>
 
-<!-- <ol>
-    <?php
-    // foreach(){
-    //     echo '<li>'..'</li>';
-    // }
-    ?>
-</ol> -->
-
 <div class="container">
     <div class="body">
         <form method="post">

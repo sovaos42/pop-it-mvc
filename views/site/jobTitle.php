@@ -4,8 +4,7 @@
         <h3><?= $message ?? ''; ?></h3>
 
 
-        <button class="dob">Добавить</button>
-
+        <a  href="<?= app()->route->getUrl('/jobTitleAdd') ?>" class="button">Добавить</a>
 
         <table>
             <tr>
@@ -50,6 +49,11 @@
     }
     .dob{
         margin-bottom: 30px;
+    }
+    .button{
+        font-size: 20pt;
+        text-shadow: 1px 1px 1px green;
+        color: white;
     }
 </style>
 

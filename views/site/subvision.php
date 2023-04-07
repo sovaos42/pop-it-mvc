@@ -51,5 +51,10 @@
     .dob{
         margin-bottom: 30px;
     }
+    .button{
+        font-size: 20pt;
+        text-shadow: 1px 1px 1px green;
+        color: white;
+    }
 </style>
 

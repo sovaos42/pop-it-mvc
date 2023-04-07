@@ -1,22 +1,14 @@
 <h2>Добавить должность</h2>
 <h3><?= $message ?? ''; ?></h3>
 
-<!-- <ol>
-    <?php
-    // foreach(){
-    //     echo '<li>'..'</li>';
-    // }
-    ?>
-</ol> -->
-
-
 <div class="container">
     <div class="body">
-    <label class="ID">ID должности<input type="text"  name="jobTitle"></label>
+    <form method="post">
+                <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
     <label class="title">Название <input type="text"  name="title"></label>
 
 <button class="button">Добавить</button>
-
+</form>
 </div>
 </div>
 <style>

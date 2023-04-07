@@ -2,6 +2,7 @@
 
 namespace Controller;
 
+use Src\Validator\Validator;
 use Model\EmployeesHome;
 use Model\Discipline;
 use Model\JobTitle;
@@ -55,11 +56,11 @@ class Site
 
     public function SubvisionAdd(Request $request): string
     {
-        $view = Subvision::all();
-        $SubvisionAdd= Subvision::all();
+        $vieww = ViewSubvision::all();
        if ($request->method === 'POST') {
     
            $validator = new Validator($request->all(), [
+                'IDView' => ['required'],
                'title' => ['required'],
            ], [
                'required' => 'Поле :field пусто',
@@ -75,7 +76,7 @@ class Site
                app()->route->redirect('/subvision');
            }
        }
-       return (new View())->render('site.subvisionAdd', ['SubvisionAdd' => $SubvisionAdd, 'view'=>$view]);
+       return new View('site.subvisionAdd', ['vieww'=>$vieww]);
     }
 
     //должность
@@ -84,11 +85,57 @@ class Site
         $JobTitle= JobTitle::all();
         return (new View())->render('site.jobTitle', ['JobTitle' => $JobTitle]);
     }
+
+    public function JobTitleAdd(Request $request): string
+    {
+       if ($request->method === 'POST') {
+    
+           $validator = new Validator($request->all(), [
+               'title' => ['required'],
+           ], [
+               'required' => 'Поле :field пусто',
+               'unique' => 'Поле :field должно быть уникально'
+           ]);
+    
+           if($validator->fails()){
+               return new View('site.jobTitleAdd',
+                   ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+           }
+    
+           if (JobTitle::create($request->all())) {
+               app()->route->redirect('/jobTitle');
+           }
+       }
+       return (new View())->render('site.jobTitleAdd');
+    }
     //дисциплина
     public function Discipline(): string
     {
         $Discipline= Discipline::all();
         return (new View())->render('site.discipline', ['Discipline' => $Discipline]);
+    }
+
+    public function DisciplineAdd(Request $request): string
+    {
+       if ($request->method === 'POST') {
+    
+           $validator = new Validator($request->all(), [
+               'title' => ['required'],
+           ], [
+               'required' => 'Поле :field пусто',
+               'unique' => 'Поле :field должно быть уникально'
+           ]);
+    
+           if($validator->fails()){
+               return new View('site.disciplineAdd',
+                   ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+           }
+    
+           if (Discipline::create($request->all())) {
+               app()->route->redirect('/discipline');
+           }
+       }
+       return (new View())->render('site.disciplineAdd');
     }
     //сотрудники
     public function User(): string

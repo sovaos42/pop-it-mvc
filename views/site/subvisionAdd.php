@@ -5,10 +5,9 @@
     <div class="body">
         <form method="post">
                 <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
-                <label class="ID">ID подразделения<input type="text"  name="subdivision"></label>
                 <label class="ID">ID вид подразделения
                 <select name="IDView">
-                    <?php foreach ($view as $vie){
+                    <?php foreach ($vieww as $vie){
                     ?>
                         <option value="<?= $vie->IDView ?>"><?= $vie->title ?></option>
 
@@ -24,6 +23,14 @@
     </div>
 </div>
 <style>
+    select{
+        border: 2px solid #004B27 ;
+        border-radius: 3px;
+        height: 30px;
+        width: 400px;
+        margin: 10px;
+        background-color: #fff;
+    }
     h2 {
         display: flex;
         justify-content: center;

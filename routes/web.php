@@ -20,6 +20,10 @@ Route::add(['GET', 'POST'], '/jobTitle', [Controller\Site::class, 'jobTitle'])
 Route::add(['GET', 'POST'], '/viewSubvision', [Controller\Admin::class, 'viewSubvision'])
    ->middleware('admin');
 Route::add(['GET', 'POST'], '/viewSubvisionAdd', [Controller\Admin::class, 'ViewSubvisionAdd'])
-   ->middleware('admin', 'auth');
-   Route::add(['GET', 'POST'], '/subvisionAdd', [Controller\Site::class, 'SubvisionAdd'])
+   ->middleware('admin');
+Route::add(['GET', 'POST'], '/subvisionAdd', [Controller\Site::class, 'SubvisionAdd'])
+   ->middleware('admin');
+Route::add(['GET', 'POST'], '/disciplineAdd', [Controller\Site::class, 'DisciplineAdd'])
+   ->middleware('admin');
+Route::add(['GET', 'POST'], '/jobTitleAdd', [Controller\Site::class, 'JobTitleAdd'])
    ->middleware('admin');
