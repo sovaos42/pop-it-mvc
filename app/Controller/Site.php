@@ -48,10 +48,22 @@ class Site
         app()->route->redirect('/hello');
     }
     //подразделение
-    public function Subvision(): string
+    // public function Subvision(): string
+    // {
+    //     $Subvision= Subvision::all();
+    //     return (new View())->render('site.subvision', ['Subvision' => $Subvision]);
+    // }
+    public function Subvision(Request $request): string
     {
-        $Subvision= Subvision::all();
-        return (new View())->render('site.subvision', ['Subvision' => $Subvision]);
+            $Subvision = Subvision::all();
+            $User = User::all();
+            if($request->method === "GET"){
+                return (new View())->render('site.subvision', ['Subvision' => $Subvision, 'User' => $User]);
+            }
+            elseif($request->method === "POST" && $request->get("type_form") == "filter_IDSubvision"){
+                $Subvision = Subvision::where("IDSubvision", "=", $request->get("IDSubvision"))->get();
+                return (new View())->render('site.subvision', ['Subvision' => $Subvision, 'User' => $User]);
+            }
     }
 
     public function SubvisionAdd(Request $request): string
@@ -139,12 +151,23 @@ class Site
     }
 
     //сотрудники
-    public function User(): string
+    // public function User(): string
+    // {
+    //     $User= User::all();
+    //     return (new View())->render('site.users', ['User' => $User]);
+    // }
+    
+    public function User(Request $request): string
     {
         $User= User::all();
-        return (new View())->render('site.users', ['User' => $User]);
-    }
-    
+         if($request->method === "GET"){
+         return (new View())->render('site.users', ['User' => $User]);
+         }
+         elseif($request->method === "POST" && $request->get("type_form") == "search_users"){
+            $User = User::where("name", "=", $request->get("search"))->get();
+            return (new View())->render('site.users', ['User' => $User]);
+        }
 
-    
+    }
+
 }

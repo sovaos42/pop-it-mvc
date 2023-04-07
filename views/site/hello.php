@@ -1,4 +1,5 @@
 <h2><?= $message ?? ''; ?></h2>
+
 <style>
         h2 {
         display: flex;

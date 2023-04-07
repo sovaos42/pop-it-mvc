@@ -5,6 +5,7 @@
 
 
 
+
         <a class="button" href="<?= app()->route->getUrl('/signup') ?>">Добавить</a>
         <table>
             <tr>
@@ -33,9 +34,33 @@
                 }
                 ?>
         </table>
+        <form method="post" class="login">
+    <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+    <input name="type_form" type="hidden" value="search_users"/>
+    <input name="search" type="text">
+            <button type="submit">Поиск</button><br>
+        </form>
+
+        <form method="post" class="login">
+    <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+    <input name="type_form" type="hidden" value="filter_IDSubvision"/>
+    <select name="IDSubvision">
+    <?php
+        foreach($User as $us){
+            ?>
+            <option class="tabl" value="<?= $us->IDSubvision?>"> <?= $us->IDSubvision?> </option>
+            <?php
+        }
+        ?>
+    </select>
+            <button type="submit">Найти</button>
+        </form>
     </div>
 </div>
 <style>
+    .login{
+        margin: 40px;
+    }
     .body{
         background-color: rgba(204, 226, 221, 1);
         padding: 25px;
@@ -52,7 +77,7 @@
         background-color: white;
         border: 2px solid #004B27 ;
     }
-    .tabl{
+    .tabl, input, select{
         padding: 7px;
         border: solid #004B27 2px;
         background-color: white;
