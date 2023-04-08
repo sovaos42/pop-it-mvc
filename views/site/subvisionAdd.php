@@ -6,10 +6,10 @@
         <form method="post">
                 <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
                 <label class="ID">ID вид подразделения
-                <select name="IDView">
+                <select name="id">
                     <?php foreach ($vieww as $vie){
                     ?>
-                        <option value="<?= $vie->IDView ?>"><?= $vie->title ?></option>
+                        <option value="<?= $vie->id ?>"><?= $vie->title ?></option>
 
                     <?php 
                     }

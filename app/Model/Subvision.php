@@ -10,7 +10,7 @@ class Subvision extends Model
     use HasFactory;
     public $timestamps = false;
     protected $fillable = [
-        'IDView',
+        'id',
         'title',   
     ];
 } 

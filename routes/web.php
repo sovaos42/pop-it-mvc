@@ -27,5 +27,5 @@ Route::add(['GET', 'POST'], '/disciplineAdd', [Controller\Site::class, 'Discipli
    ->middleware('admin');
 Route::add(['GET', 'POST'], '/jobTitleAdd', [Controller\Site::class, 'JobTitleAdd'])
    ->middleware('admin');
-Route::add(['GET', 'POST'], '/disciplineEdit', [Controller\Admin::class, 'DisciplineEdit'])
+Route::add(['GET', 'POST'], '/viewSubvisionEdit', [Controller\Admin::class, 'ViewSubvisionEdit'])
    ->middleware('admin');

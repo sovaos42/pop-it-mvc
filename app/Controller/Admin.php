@@ -64,30 +64,31 @@ class Admin
        }
        return new View('site.viewSubvisionAdd');
     }
-      //Редактирование дисциплины
-      public function DisciplineEdit(Request $request): string
-      {
-          $disciplines = Discipline::where('id', $request->id)->get();
-          if ($request->method === 'POST') {
-  
-              $validator = new Validator($request->all(), [
-                  'title' => ['required'],
-              ], [
-                  'required' => 'Поле :field пусто',
-              ]);
-  
-              if($validator->fails()){
-                  return new View('site.editDiscipline',
-                  ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
-              } else {
-                  $disciplines[0]->title = $request->title;
-                  $disciplines[0]->save();
-                  app()->route->redirect('/discipline');
-              }
-          }
-          return new View('site.disciplineEdit', [ 'disciplines' => $disciplines ]);
-  
-      }
+
+            //Редактирование видов
+            public function ViewSubvisionEdit(Request $request): string
+            {
+                $ViewSubvision = ViewSubvision::where('id', $request->id)->get();
+                if ($request->method === 'POST') {
+        
+                    $validator = new Validator($request->all(), [
+                        'title' => ['required'],
+                    ], [
+                        'required' => 'Поле :field пусто',
+                    ]);
+        
+                    if($validator->fails()){
+                        return new View('site.viewSubvisionEdit',
+                        ['message' => json_encode($validator->errors(), JSON_UNESCAPED_UNICODE)]);
+                    } else {
+                        $ViewSubvision[0]->title = $request->title;
+                        $ViewSubvision[0]->save();
+                        app()->route->redirect('/viewSubvision');
+                    }
+                }
+                return new View('site.viewSubvisionEdit', [ 'ViewSubvision' => $ViewSubvision ]);
+        
+            }
 
     // public function ViewSubvisionDelete(): string
     // {

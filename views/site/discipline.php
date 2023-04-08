@@ -15,9 +15,8 @@
         foreach($Discipline as $disc){
             ?>
             <tr>
-            <td class="tabl"> <?= $disc->id?> </td>
+            <td class="tabl"> <?= $disc->IDDisciplines?> </td>
             <td class="tabl"> <?= $disc->title?> </td>
-            <td class="button"><a href="<?= app()->route->getUrl("/disciplineEdit?id=$disc->id") ?>" class="button">Редактировать</a></td>
             </tr>
             <?php
         }

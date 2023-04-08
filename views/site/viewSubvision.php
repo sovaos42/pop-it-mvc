@@ -11,14 +11,17 @@
                 <td>Название</td>
             </tr>
 
-                <?php
-                foreach($ViewSubvision as $viewsub){
-                    echo '<tr>';
-                    echo '<td class="tabl">'.$viewsub->IDView.'</td>';
-                    echo '<td class="tabl">'.$viewsub->title.'</td>';
-                    '</tr>';
-                }
-                ?>
+            <?php
+        foreach($ViewSubvision as $disc){
+            ?>
+            <tr>
+            <td class="tabl"> <?= $disc->id?> </td>
+            <td class="tabl"> <?= $disc->title?> </td>
+            <td class="button"><a href="<?= app()->route->getUrl("/viewSubvisionEdit?id=$disc->id") ?>" class="button">Редактировать</a></td>
+            </tr>
+            <?php
+        }
+        ?>
         </table>
     </div>
 </div>

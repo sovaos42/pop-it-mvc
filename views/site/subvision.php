@@ -16,7 +16,7 @@
                 foreach($Subvision as $sub){
                     echo '<tr>';
                     echo '<td class="tabl">'.$sub->IDSubvision.'</td>';
-                    echo '<td class="tabl">'.$sub->IDView.'</td>';
+                    echo '<td class="tabl">'.$sub->id.'</td>';
                     echo '<td class="tabl">'.$sub->title.'</td>';
                     '</tr>';
                 }

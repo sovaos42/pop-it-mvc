@@ -10,7 +10,7 @@ class Discipline extends Model
     use HasFactory;
     public $timestamps = false;
     protected $fillable = [
-        'id',
+        'IDDisciplines',
         'title',   
     ];
 }

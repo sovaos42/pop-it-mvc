@@ -1,11 +1,11 @@
-<h2>Добавить дисцилину</h2>
+<h2>Редактировать</h2>
 <h3><?= $message ?? ''; ?></h3>
 
 <div class="container">
     <div class="body">
     <form method="post">
                 <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
-    <label class="title">Название <input type="text"  name="title" value="<?= $disciplines[0]->title?>"></label>
+    <label class="title">Название <input type="text"  name="title" value="<?= $ViewSubvision[0]->title?>"></label>
     <button class="button">Добавить</button>
     </select>
     </form>

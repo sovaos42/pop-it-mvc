@@ -61,8 +61,8 @@ class Site
                 return (new View())->render('site.subvision', ['Subvision' => $Subvision, 'User' => $User]);
             }
             elseif($request->method === "POST" && $request->get("type_form") == "filter_IDSubvision"){
-                $Subvision = Subvision::where("IDSubvision", "=", $request->get("IDSubvision"))->get();
-                return (new View())->render('site.subvision', ['Subvision' => $Subvision, 'User' => $User]);
+                $User = User::where("IDSubvision", "=", $request->get("IDSubvision"))->get();
+                return (new View())->render('site.users', ['Subvision' => $Subvision, 'User' => $User]);
             }
             elseif($request->method === "POST" && $request->get("type_form") == "search_users"){
             $Subvision = Subvision::where("IDSubvision", "=", $request->get("search"))->get();
@@ -76,7 +76,7 @@ class Site
        if ($request->method === 'POST') {
     
            $validator = new Validator($request->all(), [
-                'IDView' => ['required'],
+                'id' => ['required'],
                'title' => ['required'],
            ], [
                'required' => 'Поле :field пусто',
