@@ -22,9 +22,18 @@
                 }
                 ?>
         </table>
+        <form method="post" class="login">
+    <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+    <input name="type_form" type="hidden" value="search_users"/>
+    <input name="search" type="text">
+            <button type="submit">Поиск</button><br>
+        </form>
     </div>
 </div>
 <style>
+    .login{
+        margin: 40px;
+    }
     .body{
         background-color: rgba(204, 226, 221, 1);
         padding: 25px;
@@ -53,6 +62,11 @@
         font-size: 20pt;
         text-shadow: 1px 1px 1px green;
         color: white;
+    }
+    input, select{
+        padding: 7px;
+        border: solid #004B27 2px;
+        background-color: white;
     }
 </style>
 

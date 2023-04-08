@@ -34,12 +34,6 @@
                 }
                 ?>
         </table>
-        <form method="post" class="login">
-    <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
-    <input name="type_form" type="hidden" value="search_users"/>
-    <input name="search" type="text">
-            <button type="submit">Поиск</button><br>
-        </form>
 
         <form method="post" class="login">
     <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>

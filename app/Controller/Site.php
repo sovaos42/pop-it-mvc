@@ -64,6 +64,10 @@ class Site
                 $Subvision = Subvision::where("IDSubvision", "=", $request->get("IDSubvision"))->get();
                 return (new View())->render('site.subvision', ['Subvision' => $Subvision, 'User' => $User]);
             }
+            elseif($request->method === "POST" && $request->get("type_form") == "search_users"){
+            $Subvision = Subvision::where("IDSubvision", "=", $request->get("search"))->get();
+            return (new View())->render('site.subvision', ['Subvision' => $Subvision]);
+        }
     }
 
     public function SubvisionAdd(Request $request): string
@@ -151,23 +155,23 @@ class Site
     }
 
     //сотрудники
-    // public function User(): string
-    // {
-    //     $User= User::all();
-    //     return (new View())->render('site.users', ['User' => $User]);
-    // }
-    
-    public function User(Request $request): string
+    public function User(): string
     {
         $User= User::all();
-         if($request->method === "GET"){
-         return (new View())->render('site.users', ['User' => $User]);
-         }
-         elseif($request->method === "POST" && $request->get("type_form") == "search_users"){
-            $User = User::where("name", "=", $request->get("search"))->get();
-            return (new View())->render('site.users', ['User' => $User]);
-        }
-
+        return (new View())->render('site.users', ['User' => $User]);
     }
+    
+    // public function User(Request $request): string
+    // {
+    //     $User= User::all();
+    //      if($request->method === "GET"){
+    //      return (new View())->render('site.users', ['User' => $User]);
+    //      }
+    //      elseif($request->method === "POST" && $request->get("type_form") == "search_users"){
+    //         $User = User::where("name", "=", $request->get("search"))->get();
+    //         return (new View())->render('site.users', ['User' => $User]);
+    //     }
+
+    // }
 
 }
